@@ -1,6 +1,12 @@
 import {checkIndex} from "./appLogic";
 import "./style.css";
-// import image1 from "./img/1.jpeg";
+import image1 from "./img/1.jpeg";
+import image2 from "./img/2.jpeg";
+import image3 from "./img/3.jpeg";
+import image4 from "./img/4.jpeg";
+import image5 from "./img/5.jpeg";
+import image6 from "./img/6.jpeg";
+
 
 const img1 = document.createElement('img');
 const img2 = document.createElement('img');
@@ -8,12 +14,13 @@ const img3 = document.createElement('img');
 const img4 = document.createElement('img');
 const img5 = document.createElement('img');
 const img6 = document.createElement('img');
-img1.src = "../src/img/1.jpeg"
-img2.src = "../src/img/2.jpeg"
-img3.src = "../src/img/3.jpeg"
-img4.src = "../src/img/4.jpeg"
-img5.src = "../src/img/5.jpeg"
-img6.src = "../src/img/6.jpeg"
+
+img1.src = image1;
+img2.src = image2;
+img3.src = image3;
+img4.src = image4;
+img5.src = image5;
+img6.src = image6;
 
 
 
