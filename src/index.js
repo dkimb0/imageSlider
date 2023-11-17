@@ -59,13 +59,17 @@ function checkIndex(index){
     return index;
 }
 
+function scrollPicture(direction){
+    currentIndex += direction;
+    currentIndex = checkIndex(currentIndex);
+    selectPicture(currentIndex);
+    clearInterval(scrollInterval);
+    scrollInterval = setInterval(scrollPicture, 5000, 1);
+}
+
 function setupBtn(nameBtn, direction){    
     nameBtn.addEventListener('click', () => {
-        // surely not a best practice to do this right?
-        currentIndex += direction;
-
-        currentIndex = checkIndex(currentIndex);
-        selectPicture(currentIndex);
+        scrollPicture(direction);
     })
 }
 
@@ -78,3 +82,5 @@ for (let i = 0; i< numberOfImages; i++){
 selectPicture(currentIndex);
 setupBtn(rightBtn, 1);
 setupBtn(leftBtn, -1);
+
+let scrollInterval = setInterval(scrollPicture, 5000, 1);
