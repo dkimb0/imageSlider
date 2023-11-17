@@ -2,9 +2,31 @@ import {checkIndex} from "./appLogic";
 import "./style.css";
 // import image1 from "./img/1.jpeg";
 
+const img1 = document.createElement('img');
+const img2 = document.createElement('img');
+const img3 = document.createElement('img');
+const img4 = document.createElement('img');
+const img5 = document.createElement('img');
+const img6 = document.createElement('img');
+img1.src = "../src/img/1.jpeg"
+img2.src = "../src/img/2.jpeg"
+img3.src = "../src/img/3.jpeg"
+img4.src = "../src/img/4.jpeg"
+img5.src = "../src/img/5.jpeg"
+img6.src = "../src/img/6.jpeg"
 
 
-const numberOfImages = document.getElementById('imgContainer').childElementCount;
+
+const imgContainer = document.getElementById('imgContainer');
+
+imgContainer.appendChild(img1);
+imgContainer.appendChild(img2);
+imgContainer.appendChild(img3);
+imgContainer.appendChild(img4);
+imgContainer.appendChild(img5);
+imgContainer.appendChild(img6);
+
+const numberOfImages = imgContainer.childElementCount;
 const imageWidth = 480;
 let currentIndex = 0;
 let scrollInterval = setInterval(scrollPicture, 5000, 1);
