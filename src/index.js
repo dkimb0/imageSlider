@@ -1,4 +1,6 @@
 import {checkIndex} from "./appLogic";
+import "./style.css";
+
 
 const numberOfImages = document.getElementById('imgContainer').childElementCount;
 const imageWidth = 480;
