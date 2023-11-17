@@ -3,6 +3,7 @@ import "./style.css";
 // import image1 from "./img/1.jpeg";
 
 
+
 const numberOfImages = document.getElementById('imgContainer').childElementCount;
 const imageWidth = 480;
 let currentIndex = 0;
