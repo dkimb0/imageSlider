@@ -62,11 +62,7 @@ function checkIndex(index){
 function setupBtn(nameBtn, direction){    
     nameBtn.addEventListener('click', () => {
         // surely not a best practice to do this right?
-        if (direction === '+'){
-            currentIndex += 1;
-        }else{
-            currentIndex -= 1;
-        }
+        currentIndex += direction;
 
         currentIndex = checkIndex(currentIndex);
         selectPicture(currentIndex);
@@ -80,5 +76,5 @@ for (let i = 0; i< numberOfImages; i++){
     createCircle(i);
 }
 selectPicture(currentIndex);
-setupBtn(rightBtn, '+');
-setupBtn(leftBtn, '-');
+setupBtn(rightBtn, 1);
+setupBtn(leftBtn, -1);
