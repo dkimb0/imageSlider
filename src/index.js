@@ -1,7 +1,9 @@
+import {checkIndex} from "./appLogic";
 
 const numberOfImages = document.getElementById('imgContainer').childElementCount;
 const imageWidth = 480;
 let currentIndex = 0;
+let scrollInterval = setInterval(scrollPicture, 5000, 1);
 
 const rightBtn = document.getElementById("rightBtn");
 const leftBtn = document.getElementById("leftBtn");
@@ -20,6 +22,8 @@ function selectedCircle(index){
 function selectPicture(index){
     selectedCircle(index);
     document.getElementById('imgContainer').style.right = `${index * imageWidth}px`;
+    clearInterval(scrollInterval);
+    scrollInterval = setInterval(scrollPicture, 5000, 1);
 }
 
 function createCircle(index){
@@ -47,24 +51,10 @@ function createCircle(index){
 
 }
 
-// checks to see if distance is out of bounds, then takes us to 1st or last photo
-function checkIndex(index){
-
-    if (index >= numberOfImages){
-        return 0;
-    }if (index < 0){
-        return numberOfImages - 1;
-    }
-
-    return index;
-}
-
 function scrollPicture(direction){
     currentIndex += direction;
-    currentIndex = checkIndex(currentIndex);
+    currentIndex = checkIndex(currentIndex, numberOfImages);
     selectPicture(currentIndex);
-    clearInterval(scrollInterval);
-    scrollInterval = setInterval(scrollPicture, 5000, 1);
 }
 
 function setupBtn(nameBtn, direction){    
@@ -73,8 +63,6 @@ function setupBtn(nameBtn, direction){
     })
 }
 
-
-
 // init
 for (let i = 0; i< numberOfImages; i++){
     createCircle(i);
@@ -82,5 +70,3 @@ for (let i = 0; i< numberOfImages; i++){
 selectPicture(currentIndex);
 setupBtn(rightBtn, 1);
 setupBtn(leftBtn, -1);
-
-let scrollInterval = setInterval(scrollPicture, 5000, 1);

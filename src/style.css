@@ -4,24 +4,20 @@
 
 }
 
-/* body{
-    display: flex;
-    flex-direction: column;
-} */
+body{
+    margin: 0;
+}
 
 #outsideContainer{
-    /* margin: 0 auto;
-    position: fixed;
-    top: 50%;
-    left: 50%; */
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #totalContainer{
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    /* margin-top: 10vh; */
-    /* margin: 0 auto; */
 }
 
 #frameContainer{
